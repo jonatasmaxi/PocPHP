@@ -7,7 +7,7 @@
   <script src="https://assets.pagar.me/pagarme-js/3.0/pagarme.min.js"></script>
   <title> Checkout </title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/styleCheckout.css"/>
+  <link rel="stylesheet" href="./styles/styleCheckout.css"/>
   <script language="JavaScript"> 
     $(document).ready(function () {
      $('.person-type').click(function() {
@@ -31,9 +31,10 @@
   });
 </script>
 </head>
-<body onload="loadInstallments()">
+<body>
 
 <h2>Checkout</h2> 
+<?php session_start();?>
 
 <div class="row">
   <div class="col-75">
@@ -152,15 +153,17 @@
   <div class="col-25">
     <div class="container">
       <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>1</b></span></h4>
-      <%- JSON.stringify(product.name) %>
-      <p> <span class="price"><%- JSON.stringify(product.price) %></span></p>
+        <?php print_r($_SESSION['product']['name']);?>
+      <p> <span class="price"><?php print_r($_SESSION['product']['price']);?></span></p>
       <hr>
-      <p>Total <span class="price" style="color:black"><b><%- JSON.stringify(product.price) %></b></span></p>
+      <p>Total <span class="price" style="color:black"><b> 
+        <?php print_r($_SESSION['product']['price']);?>
+      </b></span></p>
     </div>
   </div>
 </div>
 <script>
-	function sendData(transactionInformation,customer,url){
+/*	function sendData(transactionInformation,customer,url){
           	$.ajax({
                   type: "POST",
                   url: url,
@@ -294,7 +297,7 @@
           }
           return false
     });
-});
+}); */
 </script>
 
 </body>

@@ -38,7 +38,7 @@
 							<div class="product-grid__extend">
 								<p class="product-grid__description">Kirby Star Alies - Nintendo Switch.</p>
 			
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>  <a href="/productRender?id=1"> Veja mais </a></span>
+								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>  <a href="../viewRenders/productPageRender.php?id=1"> Veja mais </a></span>
 							</div>
 						</div>
 					</div>
@@ -55,7 +55,7 @@
 						<div class="product-grid__extend-wrapper">
 							<div class="product-grid__extend">
 								<p class="product-grid__description">Action Figure Ahri Star Guardian .</p>		
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> <a href="/productRender?id=2"> Veja mais </a></span>
+								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i> <a href="../viewRenders/productPageRender.php?id=2"> Veja mais </a></span>
 							</div>
 						</div>
 					</div>
@@ -71,7 +71,7 @@
 						<div class="product-grid__extend-wrapper">
 							<div class="product-grid__extend">
 								<p class="product-grid__description">Cartão $20 eShop Estados Unidos.</p>		
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>  <a href="/productRender?id=3"> Veja mais </a></span>
+								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>  <a href="../viewRenders/productPageRender.php?id=3"> Veja mais </a></span>
 							</div>
 						</div>
 					</div>
@@ -86,7 +86,7 @@
 						<div class="product-grid__extend-wrapper">
 							<div class="product-grid__extend">
 								<p class="product-grid__description">Créditos para a conta Netflix.</p>		
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>  <a href="/productRender?id=4"> Veja mais </a></span>
+								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>  <a href="../viewRenders/productPageRender.php?id=4"> Veja mais </a></span>
 							</div>
 						</div>
 					</div>
@@ -101,7 +101,7 @@
 						<div class="product-grid__extend-wrapper">
 							<div class="product-grid__extend">
 								<p class="product-grid__description">Tenha diversos games em sua conta do steam mensalmente.</p>		
-								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>  <a href="/productRender?id=5"> Veja mais </a></span>
+								<span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>  <a href="../viewRenders/productPageRender.php?id=5"> Veja mais </a></span>
 							</div>
 						</div>
 					</div>
