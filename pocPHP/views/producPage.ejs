@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Página do Produto</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS -->
+    <link href="/styleProduct.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <meta name="robots" content="noindex,follow" />
+   
+
+  </head>
+
+  <body>
+    <main class="container">
+
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+    
+        <img src='' id='productImg'>
+
+      </div>
+
+
+      <!-- Right Column -->
+      <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <span> <%- JSON.stringify(product.sub_description) %> </span>
+          <h1>  <%- JSON.stringify(product.name) %></h1>
+          <p> <%- JSON.stringify(product.description) %> .</p>
+        </div>
+
+        <!-- Product Configuration -->
+
+        
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span> R$ <%- JSON.stringify(product.price)  %> </span>
+          <a href="/checkout" id="button-netflix" class="cart-btn"> Comprar</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+  <script>
+      document.getElementById("productImg").src = "images/"+<%- JSON.stringify(product.img) %>
+  </script> 
+
+  </body>
+</html>
