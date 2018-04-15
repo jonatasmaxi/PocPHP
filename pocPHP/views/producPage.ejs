@@ -8,7 +8,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <!-- CSS -->
-    <link href="/styleProduct.css" rel="stylesheet">
+    <link href="./styles/styleProduct.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <meta name="robots" content="noindex,follow" />
    
@@ -31,9 +31,9 @@
 
         <!-- Product Description -->
         <div class="product-description">
-          <span> <%- JSON.stringify(product.sub_description) %> </span>
-          <h1>  <%- JSON.stringify(product.name) %></h1>
-          <p> <%- JSON.stringify(product.description) %> .</p>
+          <span>INSERIR SUBDESCRICAO %> </span>
+          <h1>  INSERIR NOME </h1>
+          <p> INSERIR DESCRICAO .</p>
         </div>
 
         <!-- Product Configuration -->
@@ -41,7 +41,7 @@
         
         <!-- Product Pricing -->
         <div class="product-price">
-          <span> R$ <%- JSON.stringify(product.price)  %> </span>
+          <span> R$ INSERIR PREÇO  %> </span>
           <a href="/checkout" id="button-netflix" class="cart-btn"> Comprar</a>
         </div>
       </div>
@@ -49,7 +49,7 @@
 
     <!-- Scripts -->
   <script>
-      document.getElementById("productImg").src = "images/"+<%- JSON.stringify(product.img) %>
+      document.getElementById("productImg").src = "images/INSERIRIMG" %>
   </script> 
 
   </body>
