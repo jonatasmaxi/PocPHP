@@ -170,7 +170,7 @@
 </div>
 <script>
 function sendData(transactionInformation,customer){
-
+			console.log(transactionInformation);
           	$.ajax({
                   type: "POST",
                   url: '../handlers/dataHandler.php',
@@ -225,7 +225,7 @@ function sendData(transactionInformation,customer){
           var installments = $("#payment_form #installments").val();
           var payment_method = '';
           if($('input[name=payment-method]:checked').val() === 'cartao'){
-           		payment_method = 'cartao';
+           		payment_method = 'credit_card';
            } else{
            		payment_method = 'boleto';
            		installments = '1';
@@ -252,7 +252,7 @@ function sendData(transactionInformation,customer){
           	'payment_method': payment_method
           }
           var hash = ''
-          if(payment_method == 'cartao'){
+          if(payment_method == 'credit_card'){
 	          	var card = {} 
 		        card.card_holder_name = $("#payment_form #cname").val()
 		        card.card_expiration_date = $("#payment_form #expmonth").val() + '/' + $("#payment_form #expyear").val()

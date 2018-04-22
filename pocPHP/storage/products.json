@@ -19,7 +19,7 @@
 		"price": 6000,
 		"split_rules": "yes",
 		"plan_id": "no",
-		"rid": "re_cjf5rgqli00p1dw6dv57slp9j",
+		"rid": "re_cje8x1wnd0813796eo83po3od",
 		"type": "product",
 		"img": "ahri.png"
 	},
@@ -31,7 +31,7 @@
 		"price": 2199,
 		"split_rules": "yes",
 		"plan_id": "no",
-		"rid": "re_cjfee3v0801suj86ewkdq6b2d",
+		"rid": "re_cjgb6blzc00o6m66ekqnuahal",
 		"type": "product",
 		"img": "eshopCard.jpg"
 	},
@@ -43,7 +43,7 @@
 		"price": 3199,
 		"split_rules": "yes",
 		"plan_id": "294599",
-		"rid": "re_cjf5rjtjv00p4dw6dq5ib8yln",
+		"rid": "re_cje8x2cx2084v866dkm4ixhdm",
 		"type": "subscription",
 		"img": "card_netflix.jpg"
 	},
