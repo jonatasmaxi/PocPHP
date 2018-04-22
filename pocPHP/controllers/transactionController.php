@@ -56,7 +56,8 @@
 			//TRANSAÇÃO DE CARTÃO DE CRÉDITO
 			if($transaction_info->payment_method == 'credit_card'){
 				$card = $pagarMe->card()->createFromHash($transaction_info->card_hash);
-				$transaction = $pagarMe->transaction()->creditCardTransaction(
+				try{
+					$transaction = $pagarMe->transaction()->creditCardTransaction(
 					$amount,
 					$card,
 					$customer,
@@ -68,19 +69,35 @@
 					  'split_rules'=> $splitrules
 					]
 				);
+					$_SESSION['pmethod'] = 'credit_card';
+					$_SESSION['errors'] = 'false';
+				} catch(PagarMeException $ex){
+					$_SESSION['errors'] = 'true';
+					$_SESSION['msg'] = $ex->getMessage();
+				}
+		
 			} else {
-				$transaction2 = $pagarMe->transaction()->boletoTransaction(
-					$amount,
-					$customer,
-					$postbackUrl,
-					$metadata,
-					[
-						'async' => false,
-						'split_rules'=> $splitrules,
-						'boleto_instructions' => 'Não pagar após vencimento'
-					]
+				try{
+					$transaction2 = $pagarMe->transaction()->boletoTransaction(
+						$amount,
+						$customer,
+						$postbackUrl,
+						$metadata,
+						[
+							'async' => false,
+							'split_rules'=> $splitrules,
+							'boleto_instructions' => 'Não pagar após vencimento'
+						]
 
-				); 
+					);
+					$_SESSION['errors'] = 'false';
+					$_SESSION['boleto_url'] = $transaction2->getBoletoUrl(); 
+					$_SESSION['pmethod'] = 'boleto';
+				} catch(PagarMeException $ex){
+					$_SESSION['errors'] = 'true';
+					$_SESSION['msg'] = $ex->getMessage();
+				}
+				
 			}	
 	}
 ?>

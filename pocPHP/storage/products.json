@@ -42,7 +42,7 @@
 		"sub_description": "Vendido e entregue por Netflix",
 		"price": 3199,
 		"split_rules": "yes",
-		"plan_id": "294599",
+		"plan_id": "303084",
 		"rid": "re_cje8x2cx2084v866dkm4ixhdm",
 		"type": "subscription",
 		"img": "card_netflix.jpg"
@@ -54,7 +54,7 @@
 		"sub_description": "Vendido e Processado por PocStore",
 		"price": 1499,
 		"split_rules": "no",
-		"plan_id": "294986",
+		"plan_id": "303085",
 		"rid": "no",
 		"type": "subscription",
 		"img": "lootbox.jpg"
