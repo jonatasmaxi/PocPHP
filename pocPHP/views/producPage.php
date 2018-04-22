@@ -16,12 +16,16 @@
   </head>
 
   <body>
+    <?php session_start(); ?>
     <main class="container">
 
       <!-- Left Column / Headphones Image -->
       <div class="left-column">
     
-        <img src='' id='productImg'>
+        <?php 
+          $imgPath = "./images/".$_SESSION['product']['img'];
+        ?>
+        <img src="<?php echo $imgPath ?>"
 
       </div>
 
@@ -31,26 +35,16 @@
 
         <!-- Product Description -->
         <div class="product-description">
-          <span>INSERIR SUBDESCRICAO %> </span>
-          <h1>  INSERIR NOME </h1>
-          <p> INSERIR DESCRICAO .</p>
+          <span> <?php print_r($_SESSION['product']['sub_description']);?> </span>
+          <h1>   <?php print_r($_SESSION['product']['name']);?> </h1>
+          <p> <?php print_r($_SESSION['product']['description']);?> .</p>
         </div>
-
-        <!-- Product Configuration -->
-
-        
         <!-- Product Pricing -->
         <div class="product-price">
-          <span> R$ INSERIR PREÇO  %> </span>
-          <a href="/checkout" id="button-netflix" class="cart-btn"> Comprar</a>
+          <span> R$ <?php print_r($_SESSION['product']['price']);?> </span>
+          <a href="./checkoutForm.php" id="button-netflix" class="cart-btn"> Comprar</a>
         </div>
       </div>
     </main>
-
-    <!-- Scripts -->
-  <script>
-      document.getElementById("productImg").src = "images/INSERIRIMG" %>
-  </script> 
-
   </body>
 </html>
