@@ -143,7 +143,7 @@
 	  	            <?php
 	  	            	for($i = 1;$i <= count($_SESSION['installments']);$i++){
 	  	            
-	  	            		echo '<option value =('.$i.')>'.$i. 'x de '. $_SESSION['installments'][$i]['installment_amount'].' </option>';
+	  	            		echo '<option value ='.$i.'>'.$i. 'x de '. $_SESSION['installments'][$i]['installment_amount'].' </option>';
 	  	            	}
 	  	            ?>
   	            </select>
@@ -179,7 +179,7 @@ function sendData(transactionInformation,customer){
                     'transactionInformation': transactionInformation,
                 },
                 success: function(res) {
-                  window.location = '/postOrder?data='+res
+                  window.location = '../views/postOrder.php'+res
                 }
                 
               }); 
