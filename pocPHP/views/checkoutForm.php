@@ -143,7 +143,7 @@
 	  	            <?php
 	  	            	for($i = 1;$i <= count($_SESSION['installments']);$i++){
 	  	            
-	  	            		echo '<option value =($i+1)>'.$i. 'x de '. $_SESSION['installments'][$i]['installment_amount'].' </option>';
+	  	            		echo '<option value =('.$i.')>'.$i. 'x de '. $_SESSION['installments'][$i]['installment_amount'].' </option>';
 	  	            	}
 	  	            ?>
   	            </select>
@@ -169,10 +169,11 @@
   </div>
 </div>
 <script>
-/*	function sendData(transactionInformation,customer,url){
+function sendData(transactionInformation,customer){
+
           	$.ajax({
                   type: "POST",
-                  url: url,
+                  url: '../handlers/dataHandler.php',
                   data: {
                     'customer': customer,
                     'transactionInformation': transactionInformation,
@@ -184,7 +185,7 @@
               }); 
 
                         
-	} */
+	}
 
     function defineInstallments(){
     	var type = '<?php echo $_SESSION['product']['type'];?>';
@@ -207,7 +208,7 @@
       $("#payment_form #zip").val('<?php echo $_SESSION['customer']['zipcode'];?>');
       $("#payment_form #CPFText").val('<?php echo $_SESSION['customer']['document_number'];?>'); 
     }; 
- 	/*
+ 	
     $(document).ready(function() { 
       var form = $("#payment_form")
       form.submit(function(event) {
@@ -221,14 +222,7 @@
             person_type = "corporation";
             document_number = $("#payment_form #CNPJText").val();
           }
-         
-          var sec_recipient = '';
-          var splitRules =  <%- JSON.stringify(product.split_rules) %>;
           var installments = $("#payment_form #installments").val();
-
-          if(splitRules === 'yes'){
-            sec_recipient =  <%- JSON.stringify(product.rid) %>;
-          } 
           var payment_method = '';
           if($('input[name=payment-method]:checked').val() === 'cartao'){
            		payment_method = 'cartao';
@@ -254,21 +248,9 @@
           	}
          }
          var transactionInformation = {
-          	'amount': <%- JSON.stringify(product.price) %>,
-          	'split_rules': splitRules,
-          	'sec_recipient': sec_recipient,
-          	'plan_id': <%- JSON.stringify(product.plan_id) %>,
-          	'item_name': <%- JSON.stringify(product.name) %>,
           	'installments': installments,
           	'payment_method': payment_method
           }
-          var url = '';
-          if( <%- JSON.stringify(product.type) %> === 'product' ){
-                  url  = '/createTransaction';
-          } else{
-                  url = '/createSubscription';
-          }
-
           var hash = ''
           if(payment_method == 'cartao'){
 	          	var card = {} 
@@ -277,19 +259,19 @@
 		        card.card_number = $("#payment_form #ccnum").val()
 		        card.card_cvv = $("#payment_form #cvv").val()
 		        var cardValidations = pagarme.validate({card: card})
-	          	pagarme.client.connect({ encryption_key: 'ek_test_doAgNCp6z9m7W3Mszn6x5HKy0oq8dK' })
+	          	pagarme.client.connect({ encryption_key: 'ek_test_bG8QALiN6gZt4CjcQ5tIRHO5EmBQ07' })
 	            .then(client => client.security.encrypt(card))
 	            .then(card_hash => {
 	                hash = card_hash
 	             	transactionInformation.hash = hash;
-	             	sendData(transactionInformation,customer,url);
+	             	sendData(transactionInformation,customer);
 	             })  
           }else{
-          	sendData(transactionInformation,customer,url);
+          	sendData(transactionInformation,customer);
           }
           return false
     });
-}); */
+}); 
 </script>
 
 </body>
