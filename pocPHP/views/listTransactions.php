@@ -4,10 +4,11 @@
 		<title> Minhas transações </title>
 		<meta charset = "UTF-8">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="/styleTable.css"/>
+		<link rel="stylesheet" href="styles/styleTable.css"/>
 
 	</head>
 	<body>
+		<?php session_start();?>
 		<table class='transactionsTable'> 
 			<thead>
 				<th> ID Da Transação </th>
@@ -15,17 +16,13 @@
 				<th> Nome do comprador </th>
 				<th> E-mail do comprador </th>
 			</thead>
+			<?php 
+				for($i = 0; $i < count($_SESSION['transactions']);$i++){
+					echo "<tr>";
+					echo "<td>".$_SESSION['transactions'][$i]->id."</td>";
+				}
+			?>
 		</table>
 	</body>
-	<script>
-			var transactions = <%- JSON.stringify(transactions) %>
-			var table = $('.transactionsTable');
-			for(var i = 0;i < transactions.length;i++){
-				table.append("<tr><td>"+transactions[i].id+"</td>"+
-					"<td>"+transactions[i].amount+"</td>"+
-					"<td>"+transactions[i].customer.name+"</td>"+
-					"<td>"+transactions[i].customer.email+"</td></tr>"
-				)
-			}
-	</script>
+
 </html>

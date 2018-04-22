@@ -1,5 +1,4 @@
 <?php
-	echo "Ola";
 	session_start();
 	$idProduto = $_GET['id'];
 	$str = file_get_contents('../storage/products.json');

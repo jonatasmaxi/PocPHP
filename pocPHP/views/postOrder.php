@@ -10,8 +10,8 @@
 		<?php session_start(); ?>
 		<nav id ='menu'>
 			<ul>
-				<li>  <a href='/getSubscriptions'> Minhas assinaturas </a> </li>
-				<li>  <a href='/getTransactions'>  Minhas transações  </a> </li>
+				<li>  <a href='../viewRenders/subscriptionListRender.php'> Minhas assinaturas </a> </li>
+				<li>  <a href='../viewRenders/transactionListRender.php''>  Minhas transações  </a> </li>
 			</ul>
 		</nav>
 		<p> <h3> Status do Pedido </h3> </p>
