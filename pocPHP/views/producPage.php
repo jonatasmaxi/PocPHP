@@ -42,7 +42,7 @@
         <!-- Product Pricing -->
         <div class="product-price">
           <span> R$ <?php print_r($_SESSION['product']['price']);?> </span>
-          <a href="./checkoutForm.php" id="button-netflix" class="cart-btn"> Comprar</a>
+          <a href="../viewRenders/checkoutRender.php" id="button-netflix" class="cart-btn"> Comprar</a>
         </div>
       </div>
     </main>
