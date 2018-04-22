@@ -12,9 +12,10 @@
 		$rateFreeInstallments,
 		$maxInstallments
 	);
-	$_SESSION['installments'] = $installments;
+	$_SESSION["installments"] = $installments;
 	$str = file_get_contents('../storage/customer.json');
 	$json = json_decode($str, true);
-	$_SESSION['customer'] = $json;
-
+	$_SESSION["customer"] = $json[0];
+	header("Location: ../views/checkoutForm.php");
+	exit();
 ?>

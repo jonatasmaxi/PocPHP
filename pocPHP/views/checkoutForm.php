@@ -31,11 +31,10 @@
   });
 </script>
 </head>
-<body>
+<body onload='defineInstallments()'>
 
 <h2>Checkout</h2> 
 <?php session_start();?>
-
 <div class="row">
   <div class="col-75">
     <div class="container">
@@ -140,7 +139,14 @@
 	            <input type="text" id="cvv" name="cvv" placeholder="352">
               <div id='menu-installments'>
   	            <label for="sinstallments"> Parcelas </label>
-  	            <select id ='installments' name='sinstallments'></select>
+  	            <select id ='installments' name='sinstallments'>  	            
+	  	            <?php
+	  	            	for($i = 1;$i <= count($_SESSION['installments']);$i++){
+	  	            
+	  	            		echo '<option value =($i+1)>'.$i. 'x de '. $_SESSION['installments'][$i]['installment_amount'].' </option>';
+	  	            	}
+	  	            ?>
+  	            </select>
               </div>
 	          </div>
 	       	</div>
@@ -178,44 +184,30 @@
               }); 
 
                         
-	}
-    function loadInstallments(){
-       if( <%- JSON.stringify(product.type) %> === 'product' ){
-                var installments = <%-JSON.stringify(installments) %>; 
-                console.log(typeof installments)
-                console.log(installments);
-                var sel = document.getElementById('installments');   
-                for(index in installments.installments){
-                  let installment = installments.installments[index];
-                  var opt = document.createElement('option');
-                  opt.innerHTML = installment.installment+"x de "+installment.installment_amount;
-                  opt.value = installment.installment;
-                  sel.appendChild(opt);
-                } 
-        } else{
-                 $('#menu-installments').hide(); 
-        }
+	} */
 
-
-      
-    };
+    function defineInstallments(){
+    	var type = '<?php echo $_SESSION['product']['type'];?>';
+    	if(!(type === 'product')){
+    		$('#menu-installments').hide(); 
+    	} 
+ 
+    }; 
     function loadData(){
-      var customer = <%- JSON.stringify(customer) %>;
-      console.log(customer);
-      $("#payment_form #name").val(customer[0].name);
-      $("#payment_form #email").val(customer[0].email);
-      $("#payment_form #fa-phone").val(customer[0].phone);
-      $("#payment_form #birthday").val(customer[0].birthday);
-      $("#payment_form #adrStreet").val(customer[0].street);
-      $("#payment_form #adrNumber").val(customer[0].street_number);
-      $("#payment_form #adrComplementary").val(customer[0].complementary);
-      $("#payment_form #adrNeighborhood").val(customer[0].neighborhood);
-      $("#payment_form #city").val(customer[0].city);
-      $("#payment_form #state").val(customer[0].state);
-      $("#payment_form #zip").val(customer[0].zipcode);
-      $("#payment_form #CPFText").val(customer[0].document_number);
-    };
-
+      $("#payment_form #name").val('<?php echo $_SESSION['customer']['name'];?>');
+      $("#payment_form #email").val('<?php echo $_SESSION['customer']['email'];?>');
+      $("#payment_form #fa-phone").val('<?php echo $_SESSION['customer']['phone'];?>');
+      $("#payment_form #birthday").val('<?php echo $_SESSION['customer']['birthday'];?>');
+      $("#payment_form #adrStreet").val('<?php echo $_SESSION['customer']['street'];?>');
+      $("#payment_form #adrNumber").val('<?php echo $_SESSION['customer']['street_number'];?>');
+      $("#payment_form #adrComplementary").val('<?php echo $_SESSION['customer']['complementary'];?>');
+      $("#payment_form #adrNeighborhood").val('<?php echo $_SESSION['customer']['neighborhood'];?>');
+      $("#payment_form #city").val('<?php echo $_SESSION['customer']['city'];?>');
+      $("#payment_form #state").val('<?php echo $_SESSION['customer']['state'];?>');
+      $("#payment_form #zip").val('<?php echo $_SESSION['customer']['zipcode'];?>');
+      $("#payment_form #CPFText").val('<?php echo $_SESSION['customer']['document_number'];?>'); 
+    }; 
+ 	/*
     $(document).ready(function() { 
       var form = $("#payment_form")
       form.submit(function(event) {
